@@ -1,6 +1,6 @@
 {
   "name": "@from-static/generator-hello-world",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An example generator for use in the static Application Design Approach",
   "scripts": {
     "build": "node index.js"

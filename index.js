@@ -1,7 +1,10 @@
 const fs = require('fs');
 
 console.log('@from-static/generator-hello-world: Configuring "out" directory.')
-fs.rmSync('./out', { recursive: true });
+try {
+  fs.rmSync('./out', { recursive: true });
+} catch (_e) {}
+
 fs.mkdirSync('./out');
 
 let _STATIC = {};
@@ -13,6 +16,6 @@ try {
   console.log('@from-static/generator-hello-world: Error reading "static.json" file.');
 }
 
-fs.writeFileSync('./out/index.html', _STATIC?.data?.message || '');
+fs.writeFileSync('./out/index.html', _STATIC?.data?.attributes?.message || '');
 
 console.log('@from-static/generator-hello-world: Done!')
